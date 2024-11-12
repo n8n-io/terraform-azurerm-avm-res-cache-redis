@@ -20,7 +20,8 @@ output "resource_id" {
   value       = azurerm_redis_cache.this.id
 }
 
-output "system_assigned_mi_principal_id" {
-  description = "The resource id for the system managed identity principal id."
-  value       = jsondecode(data.azapi_resource.this.output).identity.principalId
-}
+# Broken: https://github.com/Azure/terraform-azurerm-avm-res-cache-redis/issues/54
+# output "system_assigned_mi_principal_id" {
+#   description = "The resource id for the system managed identity principal id."
+#   value       = jsondecode(data.azapi_resource.this.output).identity.principalId
+# }
